@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morning Brief — Ops Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 id="greeting">Good morning, Ryan.</h1>
+    <div class="header-meta">
+      <span id="datetime"></span>
+      <span><span class="status-dot"></span>All systems nominal</span>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Priority Queue -->
+    <section class="priority-queue">
+      <div class="section-title">Priority Queue</div>
+      <div class="priority-list" id="priority-list"></div>
+    </section>
+
+    <!-- Entity View -->
+    <section class="entities">
+      <div class="section-title">Entity Overview</div>
+      <div class="entity-grid" id="entity-grid"></div>
+    </section>
+
+    <!-- Key Relationships -->
+    <section class="contacts-section">
+      <div class="section-title">Key Relationships</div>
+      <table class="contacts-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Organization</th>
+            <th>Context</th>
+            <th>Last Contact</th>
+          </tr>
+        </thead>
+        <tbody id="contacts-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <div class="section-title">Quick Actions</div>
+      <div class="actions-bar">
+        <button class="action-btn"><span class="action-icon">&#9993;</span> Draft Email</button>
+        <button class="action-btn"><span class="action-icon">&#43;</span> New Task</button>
+        <button class="action-btn"><span class="action-icon">&#128221;</span> Log Meeting</button>
+        <button class="action-btn"><span class="action-icon">&#128229;</span> Check Inbox</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    Powered by Sam &nbsp;|&nbsp; <a href="mailto:sam@safeaerospace.org">sam@safeaerospace.org</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
