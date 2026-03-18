@@ -86,13 +86,40 @@
     });
   }
 
-  // Quick actions
-  function bindActions() {
-    document.querySelectorAll(".action-btn").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        alert("Coming soon — powered by Sam");
-      });
-    });
+  // Inbox Highlights
+  function renderInbox() {
+    var container = document.getElementById("inbox-list");
+    if (!container || !window.INBOX_HIGHLIGHTS) return;
+    var flagLabels = { urgent: "🔴 Urgent", action: "🟡 Action", review: "🔵 Review", info: "⚪ Info" };
+    container.innerHTML = INBOX_HIGHLIGHTS.map(function (m) {
+      return (
+        '<div class="inbox-item inbox-' + m.flag + '">' +
+          '<span class="inbox-flag">' + (flagLabels[m.flag] || m.flag) + '</span>' +
+          '<div class="inbox-content">' +
+            '<span class="inbox-from">' + esc(m.from) + '</span>' +
+            '<span class="inbox-subject">' + esc(m.subject) + '</span>' +
+            '<span class="inbox-note">' + esc(m.note) + '</span>' +
+          '</div>' +
+          '<span class="inbox-date">' + esc(m.date) + '</span>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
+  // Calendar
+  function renderCalendar() {
+    var container = document.getElementById("calendar-list");
+    if (!container || !window.CALENDAR) return;
+    container.innerHTML = CALENDAR.map(function (ev) {
+      return (
+        '<div class="cal-item">' +
+          '<div class="cal-date">' + esc(ev.date) + '</div>' +
+          '<div class="cal-event">' + esc(ev.event) + '</div>' +
+          '<div class="cal-time">' + esc(ev.time) + '</div>' +
+          '<div class="cal-org">' + esc(ev.org) + '</div>' +
+        '</div>'
+      );
+    }).join("");
   }
 
   // Utility
@@ -109,7 +136,8 @@
     renderPriorities();
     renderEntities();
     renderContacts();
-    bindActions();
+    renderInbox();
+    renderCalendar();
   }
 
   if (document.readyState === "loading") {

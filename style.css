@@ -444,3 +444,109 @@ body {
     justify-content: center;
   }
 }
+
+/* Inbox Highlights */
+.inbox-section { margin-bottom: 2rem; }
+
+.inbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+}
+
+.inbox-item.inbox-urgent { border-left: 3px solid #e53e3e; }
+.inbox-item.inbox-action { border-left: 3px solid #d69e2e; }
+.inbox-item.inbox-review { border-left: 3px solid #4a90d9; }
+.inbox-item.inbox-info   { border-left: 3px solid #555; }
+
+.inbox-flag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 90px;
+  padding-top: 0.1rem;
+  color: var(--text-muted);
+}
+
+.inbox-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.inbox-from {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.inbox-subject {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.inbox-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.inbox-date {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+/* Calendar */
+.calendar-section { margin-bottom: 2rem; }
+
+.calendar-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.cal-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cal-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cal-event {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cal-time {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.cal-org {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
